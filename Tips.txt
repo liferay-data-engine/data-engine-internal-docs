@@ -24,11 +24,16 @@ RUNNING INTEGRATION TESTS
 Running tests: gw testIntegration
 Debbuging tests: gw testIntegration --tests com.liferay.data.engine...
 
+RUNNING FUNCTIONAL POSHI TESTS:
+Run: ant -f build-test.xml run-selenium-test -Dtest.class=TestClass#TestName
+
 DEPLOYING MODIFIED MODULES
 gw deploy
 gw deploy -a
 gw clean deploy
 gw deploy -a
+
+ACCESS TO GITHUB CLI MANUAL: https://cli.github.com/manual/
 
 STEPS TO SEND A PULL REQUEST
 1. Verify the format source
@@ -39,13 +44,11 @@ STEPS TO SEND A PULL REQUEST
 3. Verify if the branch's name is correct
 4. Run: git commit -m "LPS-xxxxxx message"
 5. Run: git pull --rebase upstream master
-6. Then gh pr create -R liferay-echo/liferay-portal -t "pr title" -b "body message"
+6. Then gh pr create -R liferay-data-engine/liferay-portal -t "pr's title" -b "pr's description"
 
 CODE REVIEW
-gh pr checkout urlDoPr
-gh ph review urlDoPr --comment -b "comentário"
-
-ACCESS TO GITHUB CLI MANUAL: https://cli.github.com/manual/
+gh pr checkout prURL
+gh ph review prURL --comment -b "comment"
 
 SOME GIT COMMANDS
 1 - git pull --rebase upstream master
@@ -63,17 +66,17 @@ ci:test:sf
 ci:test:relevant
 ci:forward
 
-FETCHING
-1. Add remote pointing to "mateussgn" repository
-    1.1. git remote add mateussgn https://github.com/mateussgn/liferay-portal.git 
-2. Run: fetch pull/<id do pull request>/head:nomeBranchLocal
+BRANCH FETCHING
+1. Add remote pointing to "USERNAME" repository
+    1.1. git remote add "username" https://github.com/username/liferay-portal.git 
+2. Run: fetch pull/pullRequestID/head:nomeBranchLocal
 3. Run: git cherry-pick commitIdentfierˆ..commitIdentifier
-fetching branch -> git fetch git@github.com:rodrigopaulino/liferay-portal.git --no-tags LPS-125538,LPS-125463:Wip-Paulino
+   fetching branch -> git fetch git@github.com:rodrigopaulino/liferay-portal.git --no-tags LPS-125463:Wip-Paulino
 
 JUNTAR COMMITS
 Link where I learned from:https://imasters.com.br/desenvolvimento/git-como-juntar-diversos-commits-em-apenas-um
 https://blog.psantos.dev/git-como-juntar-varios-commits-em-apenas-um/
 1. Run: git rebase -i HEAD~3
-2. Run: change pick to squash
+2. Run: change "pick" to "squash"
 3. Run: write the commit message
 4. Run: git commit --amend

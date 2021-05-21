@@ -74,9 +74,10 @@ BRANCH FETCHING
    fetching branch -> git fetch git@github.com:rodrigopaulino/liferay-portal.git --no-tags LPS-125463:Wip-Paulino
 
 JUNTAR COMMITS
-Link where I learned from:https://imasters.com.br/desenvolvimento/git-como-juntar-diversos-commits-em-apenas-um
-https://blog.psantos.dev/git-como-juntar-varios-commits-em-apenas-um/
+Links where I learned from:
+	https://imasters.com.br/desenvolvimento/git-como-juntar-diversos-commits-em-apenas-um
+	https://blog.psantos.dev/git-como-juntar-varios-commits-em-apenas-um/
+Steps:
 1. Run: git rebase -i HEAD~3
 2. Run: change "pick" to "squash"
 3. Run: write the commit message
-4. Run: git commit --amend

@@ -8,13 +8,13 @@
 2. Run `./db_upgrade`
 
 # RUNNING UPGRADE AGAIN WITHOUT ANT ALL
-1. Go to ../bundles/liferay-portal/tools/portal-tools-db-upgrade-client
-2. Remove  portal-upgrade-database.properties and portal-upgrade-ext.properties
-3. Run ./db_upgrade
+1. Go to `../bundles/liferay-portal/tools/portal-tools-db-upgrade-client`
+2. Remove  `portal-upgrade-database.properties and portal-upgrade-ext.properties`
+3. Run `./db_upgrade`
 
 # DEBUGGING UPGRADE
 1. Go to `../bundles/liferay-portal/tools/portal-tools-db-upgrade-client`
-1. Run `./db_upgrade.sh --debug`
+2. Run `./db_upgrade.sh --debug`
 
 # RUNNING UNIT TESTS:
 - Running tests: `gw test`
@@ -38,10 +38,10 @@ Run: `ant -f build-test.xml run-selenium-test -Dtest.class=TestClass#TestName`
 
 # STEPS TO SEND A PULL REQUEST
 1. Verify the format source
-    1.1. Run gw formatsource
-    1.2. Fix every wrong source
+	1. Run gw formatsource
+    2. Fix every wrong source
 2. If everything is correct
-    2.1 Run: `git add .`
+    1. Run: `git add .`
 3. Verify if the branch's name is correct
 4. Run: `git commit -m "LPS-xxxxxx message"`
 5. Run: `git pull --rebase upstream master`
@@ -53,31 +53,32 @@ Run: `ant -f build-test.xml run-selenium-test -Dtest.class=TestClass#TestName`
 
 # SOME GIT COMMANDS
 1. `git pull --rebase upstream master`
-2. `git checkout -b "branch name"`
-3. `git stash`
-4. `git stash list`
-5. `git stash apply`
-6. `git stash apply stash@{2}`
-7. `git stash drop stash@{2}`
-8. `git commit --amend -m "New commit message"`
-9. `git clean -f`
+2. `git clean -f`
+3. `git checkout -b "branch name"`
+4. `git stash`
+5. `git stash list`
+6. `git stash apply`
+7. `git stash apply stash@{2}`
+8. `git stash drop stash@{2}`
+9. `git commit --amend -m "New commit message"`
 
 # CI GITHUB
-ci:test:sf
-ci:test:relevant
-ci:forward
+- ci:test:sf
+- ci:test:relevant
+- ci:forward
 
 # BRANCH FETCHING
 1. Add remote pointing to "USERNAME" repository
-    1.1. `git remote add "username" https://github.com/username/liferay-portal.git` 
+    1. `git remote add "username" https://github.com/username/liferay-portal.git` 
 2. Run: `fetch pull/pullRequestID/head:nomeBranchLocal`
 3. Run: `git cherry-pick commitIdentfierˆ..commitIdentifier`
-   3.1. Fetching branch: `git fetch git@github.com:rodrigopaulino/liferay-portal.git --no-tags LPS-125463:Wip-Paulino`
+   1. Fetching branch: `git fetch git@github.com:rodrigopaulino/liferay-portal.git --no-tags LPS-125463:Wip-Paulino`
 
 # JUNTAR COMMITS
 Links where I learned from:
-	https://imasters.com.br/desenvolvimento/git-como-juntar-diversos-commits-em-apenas-um
-	https://blog.psantos.dev/git-como-juntar-varios-commits-em-apenas-um/
+- https://imasters.com.br/desenvolvimento/git-como-juntar-diversos-commits-em-apenas-um
+- https://blog.psantos.dev/git-como-juntar-varios-commits-em-apenas-um/
+
 Steps:
 1. Run: `git rebase -i HEAD~3`
 2. Run: change "pick" to "squash"

@@ -48,8 +48,9 @@ Run: `ant -f build-test.xml run-selenium-test -Dtest.class=TestClass#TestName`
 6. Then `gh pr create -R liferay-data-engine/liferay-portal -t "pr's title" -b "pr's description"`
 
 # CODE REVIEW
-- `gh pr checkout prURL`
-- `gh ph review prURL --comment -b "comment"`
+- Pull PR branch for local review: `gh pr checkout prURL`
+- Approve PR: `gh ph review prURL -a`
+- Leave a comment: `gh ph review prURL --comment -b "comment"`
 
 # SOME GIT COMMANDS
 1. `git pull --rebase upstream master`
